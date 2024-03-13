@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/styles.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
 
 const App = () =>
 {
@@ -16,6 +17,7 @@ const App = () =>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home/>} />
+                    <Route path="/login" element={<Login/>} />
                 </Routes>
             </BrowserRouter>
         </Context.Provider>
