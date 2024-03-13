@@ -19,88 +19,89 @@
   ],
   "paket_data": [
     {
+      "id": "9d1f",
       "nama_paket": "AXIS+ BRONET 24JAM 1GB 30HR, 6BLN",
+      "keterangan": "Paket AXIS+ 24Jam 1GB 30hr, 6bln Kuota utama 1GB di 2G/3G/4G & Bonus 2GB Sosmed/ Chat perbulan selama 6 Bulan",
       "harga": 40000,
-      "kategori_kartu": "axis",
-      "id": "9d1f"
+      "kategori_kartu": "axis"
     },
     {
+      "id": "2208",
       "nama_paket": "BRONET 24JAM 12GB + GAMES 2GB",
+      "keterangan": "Paket Internet Axis 12GB 24Jam all Network + 2GB Games (Freefire/Mobile Legend/AOV/Vainglory/L2R/ModernCombats/HAGO/ASPALT9), selama 60 hari",
       "harga": 97900,
-      "kategori_kartu": "axis",
-      "id": "2208"
+      "kategori_kartu": "axis"
     },
     {
+      "id": "ed3c",
       "nama_paket": "BRONET 24JAM 8GB 60D + SOSMED 2GB 30D",
+      "keterangan": "Paket Internet Axis 8GB 24Jam all Network, 60hr + 2GB SosMed 30hr (Facebook/Instagram/Twitter/Tiktok)",
       "harga": 87900,
-      "kategori_kartu": "axis",
-      "id": "ed3c"
+      "kategori_kartu": "axis"
     },
     {
-      "nama_paket": "BRONET 24JAM 8GB 60D + SOSMED 2GB 30D",
+      "id": "09bb",
+      "nama_paket": "BRONET 24JAM 10GB 60D + SOSMED 2GB 30D",
+      "keterangan": "Paket Internet Axis 10GB 24Jam all Network, 60hr + 2GB SosMed 30hr (Facebook/Instagram/Twitter/Tiktok)",
       "harga": 87900,
-      "kategori_kartu": "axis",
-      "id": "09bb"
+      "kategori_kartu": "axis"
     },
     {
+      "id": "fc08",
       "nama_paket": "BRONET 24JAM 12GB 60D + SOSMED 2GB 30D",
+      "keterangan": "Paket Internet Axis 12GB 24Jam all Network, 60hr + 2GB SosMed 30hr (Facebook/Instagram/Twitter/Tiktok)",
       "harga": 97900,
-      "kategori_kartu": "axis",
-      "id": "fc08"
+      "kategori_kartu": "axis"
     },
     {
-      "nama_paket": "BRONET 24JAM 12GB 60D + SOSMED 2GB 30D",
-      "harga": 97900,
-      "kategori_kartu": "axis",
-      "id": "8b13"
-    },
-    {
+      "id": "3793",
       "nama_paket": "PAKET KANGEN 30 MENIT 7 HARI",
+      "keterangan": "Kuota nelpon 30 menit ke semua operator, masa aktif 7 hari.",
       "harga": 9900,
-      "kategori_kartu": "axis",
-      "id": "3793"
+      "kategori_kartu": "axis"
     },
     {
+      "id": "d6dc",
       "nama_paket": "TELKOMSEL DATA 1GB, 30HARI",
+      "keterangan": "DATA ALL NETWORK + BEBAS ZONA 1GB",
       "harga": 18900,
-      "kategori_kartu": "telkomsel",
-      "id": "d6dc"
+      "kategori_kartu": "telkomsel"
+      
     },
     {
+      "id": "292b",
       "nama_paket": "GAMESMAX POWER SILVER FF 30HARI",
+      "keterangan": "1,5GB + Kuota DPI Sepuasnya (FUP 10GB)= Total Kuota 11,5GB + Free Fire: 50 Diamond, 30HARI",
       "harga": 26500,
-      "kategori_kartu": "telkomsel",
-      "id": "292b"
+      "kategori_kartu": "telkomsel"
     },
     {
+      "id": "f9be",
       "nama_paket": "GAMESMAX POWER GOLD FF 30HARI",
+      "keterangan": "3,5GB + Kuota DPI Sepuasnya (FUP 20GB)= Total Kuota 23,5GB + Free Fire: 140 Diamond,30HARI",
       "harga": 51500,
-      "kategori_kartu": "telkomsel",
-      "id": "f9be"
+      "kategori_kartu": "telkomsel"
     },
     {
-      "nama_paket": "GAMESMAX POWER GOLD FF 30HARI",
-      "harga": 51500,
-      "kategori_kartu": "telkomsel",
-      "id": "0df5"
-    },
-    {
+      "id": "e545",
       "nama_paket": "GAMESMAX POWER WEEKLY MLBB 7HARI",
+      "keterangan": "1,5GB + Kuota DPI Sepuasnya (FUP 10GB)= Total Kuota 11,5GB + MLBB: 28 Diamond,30HARI",
       "harga": 16500,
-      "kategori_kartu": "telkomsel",
-      "id": "e545"
+      "kategori_kartu": "telkomsel"
     },
     {
+      "id": "de46",
       "nama_paket": "GAMESMAX POWER SILVER MLBB 30HARI",
+      "keterangan": "1,5GB + Kuota DPI Sepuasnya (FUP 10GB)= Total Kuota 11,5GB + MLBB: 28 Diamond,30HARI",
       "harga": 26500,
-      "kategori_kartu": "telkomsel",
-      "id": "de46"
+      "kategori_kartu": "telkomsel"
     },
     {
+      "id": "492d",
       "nama_paket": "GAMESMAX POWER DIAMOND MLBB 30HARI",
+      "keterangan": "6GB + Kuota DPI Sepuasnya (FUP 30GB)= Total Kuota 36GB + MLBB: 85 Diamond,30HARI",
       "harga": 76000,
-      "kategori_kartu": "telkomsel",
-      "id": "492d"
+      "kategori_kartu": "telkomsel"
     }
   ],
   "items_user": []
