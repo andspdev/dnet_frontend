@@ -25,9 +25,6 @@ const App = () =>
                     <Route path="/logout" element={<Logout/>} /> 
                 </Routes>
             </BrowserRouter>
-
-            <ItemTerakhir />
-            
         </Context.Provider>
     )
 }
