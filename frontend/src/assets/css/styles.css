@@ -1,5 +1,6 @@
 :root {
     --color-primary-blue: #0663dc;
+    --color-harga: #eb9b34;
     --border-color: #ddd;
     --box-shadow-color: #77777726
 }
@@ -112,4 +113,30 @@ a {
 .footer {
     padding: 20px;
     border-top: 1px solid var(--border-color)
+}
+
+.loader-full {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.detail-paket {
+    margin: 4em auto;
+    max-width: 500px;
+    width: calc(100% - 30px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 0 8px #eee;
+}
+
+.detail-paket .title,
+.detail-paket .content {
+    padding: 20px
+}
+
+.detail-paket .title {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
