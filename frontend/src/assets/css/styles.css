@@ -21,13 +21,12 @@ a {
 .box-login {
     border: 1px solid #ddd;
     padding: 40px 25px;
-    margin: 20px;
     border-radius: 15px;
     max-width: 480px;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
+    width: calc(100% - 30px);
     transform: translate(-50%, -50%);
     box-shadow: 0 0 8px #eee;
 }
