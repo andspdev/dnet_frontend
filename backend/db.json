@@ -1,0 +1,95 @@
+{
+    "pengguna": [
+        {
+            "id": 1,
+            "nama": "Pengguna 1",
+            "email": "",
+            "password": "12345678",
+            "thumbnail": "",
+            "bergabung_pada": "13 Maret 2024 08:43",
+            "session_login": ""
+        },
+        {
+            "id": 2,
+            "nama": "Pengguna 2",
+            "email": "",
+            "password": "12345678",
+            "thumbnail": "",
+            "bergabung_pada": "10 Maret 2024 12:30",
+            "session_login": ""
+        }
+    ],
+    "paket_data": [
+        {
+            "nama_paket": "AXIS+ BRONET 24JAM 1GB 30HR, 6BLN",
+            "harga": 40000,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "BRONET 24JAM 12GB + GAMES 2GB",
+            "harga": 97900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "BRONET 24JAM 8GB 60D + SOSMED 2GB 30D",
+            "harga": 87900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "BRONET 24JAM 8GB 60D + SOSMED 2GB 30D",
+            "harga": 87900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "BRONET 24JAM 12GB 60D + SOSMED 2GB 30D",
+            "harga": 97900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "BRONET 24JAM 12GB 60D + SOSMED 2GB 30D",
+            "harga": 97900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "PAKET KANGEN 30 MENIT 7 HARI",
+            "harga": 9900,
+            "kategori_kartu": "axis"
+        },
+        {
+            "nama_paket": "TELKOMSEL DATA 1GB, 30HARI",
+            "harga": 18900,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER SILVER FF 30HARI",
+            "harga": 26500,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER GOLD FF 30HARI",
+            "harga": 51500,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER GOLD FF 30HARI",
+            "harga": 51500,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER WEEKLY MLBB 7HARI",
+            "harga": 16500,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER SILVER MLBB 30HARI",
+            "harga": 26500,
+            "kategori_kartu": "telkomsel"
+        },
+        {
+            "nama_paket": "GAMESMAX POWER DIAMOND MLBB 30HARI",
+            "harga": 76000,
+            "kategori_kartu": "telkomsel"
+        }
+    ],
+    "items_user": []
+}
