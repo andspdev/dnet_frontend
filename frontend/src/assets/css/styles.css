@@ -140,3 +140,20 @@ a {
     text-align: center;
     border-bottom: 1px solid var(--border-color);
 }
+
+.last-item-beli {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 15px 25px;
+    border-top: 1px solid var(--border-color);
+}
+
+.last-item-beli .desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

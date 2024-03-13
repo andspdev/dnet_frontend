@@ -1,101 +1,117 @@
-import { Component } from "react";
+import { Component, useContext, useEffect, useState } from "react";
 import ImageLoader from '../../assets/images/loader.svg'
 import axios from "axios";
-import { Context } from "../includes/GlobalState";
+import { Context, GlobalState } from "../includes/GlobalState";
 import { formatUang, getCookie } from "../includes/Functions";
 
 import { Header } from "../includes/Header";
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
+import Footer from "../includes/Footer";
 
-class DetailPaket extends Component
+
+
+const DetailPaket = () =>
 {
-    static contextType = Context
+    const { id } = useParams()
+    const { state } = useLocation()
+    const [ stateGlobal, setStateGlobal ] = useContext(Context)
+    const [ stateLocal, setStateLocal ] = useState({
+        load_detail: true,
+        response_detail: ''
+    })
 
-    constructor(props)
+    useEffect(() =>
     {
-        super(props)
-
-        this.state = {
-            load_detail: true,
-            response_detail: ''
-        }
-    }
-
-    componentDidMount()
-    {
-        const get_user = getCookie('user_login');
+        const get_user = getCookie('user_login')
 
         if (get_user === '')
         {
-            window.location.href = './login';
+            window.location.href = '/login';
         }
         else
         {
-            const { id } = this.props;
-            const [ getState ] = this.context
+            if (!state || state.nomor_telepon === '')
+                window.location.href = '/'
+            else
+            {
+                document.title = 'Detail Paket Data | ' + stateGlobal.title_web
 
-            document.title = 'Detail Paket Data | ' + getState.title_web
-
-            axios({
-                url: `${getState.url_api}/paket_data/${id}`,
-                method: 'GET'
-            })
-            .then(data => {
-                const response = data.data
-
-                this.setState({
-                    load_detail: false,
-                    response_detail: response
+                axios({
+                    url: `${stateGlobal.url_api}/paket_data/${id}`,
+                    method: 'GET'
                 })
+                .then(data => {
+                    const response = data.data
 
-            })
-            .catch(error => {
-                alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message}`)
-                console.log('Error detail: ', error)
-            });
+                    setStateLocal(prevState => ({
+                        ...prevState,
+                        load_detail: false,
+                        response_detail: response
+                    }))
+
+                })
+                .catch(error => {
+                    alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message}`)
+                    console.log('Error detail: ', error)
+                });
+            }
         }
+    }, [])
+
+    const fetch_data = stateLocal.response_detail
+
+
+    const bayarSekarang = (e) =>
+    {
+        e.preventDefault()
+
+        setStateGlobal((prevState) => ({
+            ...prevState,
+            terakhir_pilih_item: {
+                nomor_telepon: state.nomor_telepon,
+                items: stateLocal.response_detail
+            }
+        }))
+        
     }
 
-    render()
-    {
-        const fetch_data = this.state.response_detail
+    return (
+        <>
+            {stateLocal.load_detail ? (
+                <div className="loader-full">
+                    <img src={ImageLoader} alt="Loader"/>
+                </div>
+            ) : (
+                <>
+                    <Header/>
+                    <div className="detail-paket">
+                        <div className="title">
+                            <h3>Paket Data</h3>
+                        </div>
 
-        return(
-            <>     
-                {this.state.load_detail ? (
-                    <div className="loader-full">
-                        <img src={ImageLoader} alt="Loader"/>
-                    </div>
-                ) : (
-                    <>
-                        <Header/>
+                        <div className="content">
+                            <b>{fetch_data.nama_paket}</b>
+                            <p>{fetch_data.kategori_kartu.toUpperCase()} - {state.nomor_telepon}</p>
 
-                        <div className="detail-paket">
-                            <div className="title">
-                                <h3>Paket Data</h3>
-                            </div>
+                            <b>Keterangan</b>
+                            <p>{fetch_data.keterangan}</p>
 
-                            <div className="content">
-                                <b>{fetch_data.nama_paket}</b>
-                                <p>{fetch_data.kategori_kartu.toUpperCase()} - </p>
+                            <b>Total</b>
+                            <h3 style={{color: 'var(--color-harga)'}}>{formatUang(fetch_data.harga)}</h3>
 
-                                <b>Keterangan</b>
-                                <p>{fetch_data.keterangan}</p>
-
-                                <b>Total</b>
-                                <h3 style={{color: 'var(--color-harga)'}}>{formatUang(fetch_data.harga)}</h3>
-
+                            <form method="post" onSubmit={(e) => bayarSekarang(e)}>
                                 <div className="d-grid mt-4">
-                                    <button className="btn btn-primary mb-2">BELI SEKARANG</button>
+                                    <button className="btn btn-primary mb-2">BAYAR SEKARANG</button>
                                     <Link to="/" className="btn btn-secondary">BATALKAN</Link><br/>
                                 </div>
-                            </div>
+                            </form>                     
                         </div>
-                    </>
-                )}
-            </>
-        )
-    }
+                    </div>
+                    <Footer/>
+                </>
+            )}
+        </>
+    )
 }
 
 export default DetailPaket

@@ -49,8 +49,6 @@ class Home extends Component
                     get_data_operator.push(value)
             });
 
-            console.log(get_data_operator)
-
             this.setState({
                 is_submit_paketan: true,
                 load_data_paketan: false,
@@ -86,7 +84,7 @@ class Home extends Component
                                         <p>{formatUang(value.harga)}</p>
 
                                         <div className="mt-5">
-                                            <Link to={'/paket-data/'+value.id} className="btn btn-primary btn-sm btn-beli-skrg">Beli Sekarang</Link>
+                                            <Link to={'/paket-data/'+value.id} state={{nomor_telepon: this.state.nomor_telepon}} className="btn btn-primary btn-sm btn-beli-skrg">Beli Sekarang</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -100,6 +98,7 @@ class Home extends Component
 
     render() 
     {
+
         return(
             <>
                 <Header/>

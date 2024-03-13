@@ -20,9 +20,6 @@ export const Header = () =>
                         <li className="nav-item">
                             <Link className="nav-link mx-2" to='/login'>Login</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link mx-2" href="">Shopping Cart</Link>
-                        </li>
                     </ul>
                 </div>
             </div>
