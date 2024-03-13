@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { getCookie } from '../includes/Functions'
 
 export const Header = () =>
 {
+    const getUser = getCookie('user_login')
+
     return(
         <nav className='navbar navbar-expand-lg navbar-custom'>
             <div className='container-fluid'>
@@ -17,9 +20,27 @@ export const Header = () =>
                         <li className="nav-item">
                             <Link className="nav-link mx-2" to="/">Beranda</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link mx-2" to='/login'>Login</Link>
-                        </li>
+
+                        {getUser !== '' ? (
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link mx-2" to='/transaksi'>Transaksi Saya</Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link className="nav-link mx-2" to='/profil'>Profil Saya</Link>
+                                </li>
+
+                                <li className="nav-item">
+                                    <Link className="nav-link mx-2" to='/logout'>Keluar</Link>
+                                </li>
+                            </>
+                            
+                        ) : (
+                            <li className="nav-item">
+                                <Link className="nav-link mx-2" to='/login'>Login</Link>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>
