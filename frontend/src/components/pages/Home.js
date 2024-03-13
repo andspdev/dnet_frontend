@@ -115,8 +115,6 @@ class Home extends Component
                                     <h2>Paket Data Internet All Operator</h2>
                                     <p>Isi ulang dengan mudah, nggak pakai ribet dan paling murah. Ayo beli paket data kamu disini!</p>
                                 </div>
-
-                                <input type="text" className="form-control input-search" placeholder="Cari paket data disini ..."/>
                             </div>
                         </div>
                     </div>
