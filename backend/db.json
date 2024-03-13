@@ -3,7 +3,7 @@
         {
             "id": 1,
             "nama": "Pengguna 1",
-            "email": "",
+            "email": "pengguna1@email.com",
             "password": "12345678",
             "thumbnail": "",
             "bergabung_pada": "13 Maret 2024 08:43",
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "nama": "Pengguna 2",
-            "email": "",
+            "email": "pengguna2@email.com",
             "password": "12345678",
             "thumbnail": "",
             "bergabung_pada": "10 Maret 2024 12:30",
