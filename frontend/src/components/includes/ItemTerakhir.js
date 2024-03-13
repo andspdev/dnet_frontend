@@ -28,7 +28,8 @@ const ItemTerakhir = () =>
                 paket_id: fetch_data.items.id,
                 pengguna_id: get_user,
                 created_at: getCurrentDateTime(),
-                status: "PENDING"
+                status: "PENDING",
+                transaksi_id: new Date().getTime()
             }
 
             axios({

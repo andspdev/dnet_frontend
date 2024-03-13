@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import DetailPaket from "./components/pages/DetailPaket";
 import Logout from "./components/pages/Logout";
+import TransaksiSaya from "./components/pages/TransaksiSaya";
 
 const App = () =>
 {
@@ -21,6 +22,8 @@ const App = () =>
                     <Route path="/" element={<Home/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/paket-data/:id" element={<DetailPaket/>} /> 
+                    <Route path="/transaksi" element={<TransaksiSaya/>} />
+                    <Route path="/transaksi/:id" element={null} />
                     <Route path="/logout" element={<Logout/>} /> 
                 </Routes>
             </BrowserRouter>

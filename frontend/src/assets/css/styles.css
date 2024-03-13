@@ -17,8 +17,18 @@ a {
     color: var(--color-primary-blue)
 }
 
-.btn-primary {
-    background: var(--color-primary-blue)
+.form-control,
+.form-select {
+    padding: 10px;
+}
+
+.btn:not(.btn-sm) {
+    padding: 10px;
+}
+
+.btn-primary,
+.bg-primary {
+    background: var(--color-primary-blue)!important
 }
 
 .box-login {
@@ -156,4 +166,35 @@ a {
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.card-transaksi-saya {
+    max-width: 900px;
+    margin: 3em auto;
+    border-radius: 12px;
+    width: calc(100% - 40px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 8px #eee;
+}
+
+.card-transaksi-saya .title,
+.card-transaksi-saya .content {
+    padding: 20px
+}
+
+.card-transaksi-saya .title {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-transaksi-saya hr {
+    margin: 0;
+    padding: 0;
+}
+
+.card-transaksi-saya .title h3 {
+    font-size: 20px;
+}
+
+.loader img {
+    width: 40px;
 }
