@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import DetailPaket from "./components/pages/DetailPaket";
 import ItemTerakhir from "./components/includes/ItemTerakhir";
+import Logout from "./components/pages/Logout";
 
 const App = () =>
 {
@@ -21,6 +22,7 @@ const App = () =>
                     <Route path="/" element={<Home/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/paket-data/:id" element={<DetailPaket/>} /> 
+                    <Route path="/logout" element={<Logout/>} /> 
                 </Routes>
             </BrowserRouter>
 

@@ -35,6 +35,10 @@ export const getCookie = (cookieName) => {
 	return "";
 }
 
+export const deleteCookie = (namaCookie) => {
+    document.cookie = namaCookie + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
 export const fetchUser = (response, id) =>
 {
     return response.find(function(value)
