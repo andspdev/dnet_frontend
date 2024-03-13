@@ -1,7 +1,7 @@
-import { Component, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ImageLoader from '../../assets/images/loader.svg'
 import axios from "axios";
-import { Context, GlobalState } from "../includes/GlobalState";
+import { Context } from "../includes/GlobalState";
 import { formatUang, getCookie } from "../includes/Functions";
 
 import { Header } from "../includes/Header";

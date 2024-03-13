@@ -8,7 +8,6 @@ import 'bootstrap/dist/js/bootstrap.js';
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import DetailPaket from "./components/pages/DetailPaket";
-import ItemTerakhir from "./components/includes/ItemTerakhir";
 import Logout from "./components/pages/Logout";
 
 const App = () =>
