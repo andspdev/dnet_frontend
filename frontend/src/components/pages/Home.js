@@ -239,9 +239,9 @@ const Home = () =>
                 </div>
 
 
-                <div style={{paddingTop: '8em'}} className="text-center">
+                <div style={{paddingTop: '8em'}} className="text-center px-3">
                     Copyright &copy; 2024 <Link to="/">{stateGlobal.title_web}</Link><br/>
-                    Oleh <a href="https://www.andsp.id" target="_blank" rel="noreferrer">Andreas Pandu Pamungkas</a>. 
+                    Oleh <a href="https://www.andsp.id" target="_blank" rel="noreferrer">Andreas Pandu</a>. 
                     All Rights Reserved.
                 </div>
             </div>

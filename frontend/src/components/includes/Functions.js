@@ -118,3 +118,7 @@ export const getCurrentDateTime = (dateTime = null) => {
 export const isValidPhoneNumber = (phoneNumber) => {
     return /^(^\+62\s?|^08)\d{9,}$/.test(phoneNumber);
 }
+
+export const isMobileDevice = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}

@@ -1,7 +1,7 @@
 import { Header } from '../includes/Header'
 import { useContext, useEffect, useState } from 'react'
 import { Context } from "../includes/GlobalState";
-import { getCookie } from '../includes/Functions';
+import { getCookie, isMobileDevice } from '../includes/Functions';
 import axios from 'axios';
 import ItemTerakhir from "../includes/ItemTerakhir";
 import ImageLoader from '../../assets/images/loader.svg'
@@ -92,6 +92,90 @@ const TransaksiSaya = () =>
     };
     
     
+    const layoutTransaksi = () =>
+    {
+        if (isMobileDevice())
+        {
+            return(
+                <>
+                    <table className='table table-hover table-stripped table-bordered'>
+                        <tbody>
+                            {
+                                stateLocal.data_transaksi.map((value, index) =>
+                                (
+                                    <>
+                                        <tr>
+                                            <th>Transaksi ID</th>
+                                            <td>:</td>
+                                            <td>{value.transaksi_id}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Status Pembayaran</th>
+                                            <td>:</td>
+                                            <td>
+                                                {value.status === 'PENDING' ? (
+                                                    <span className='badge bg-warning text-dark'>PENDING</span>
+                                                ) : (
+                                                    <span className='badge bg-success'>PAID</span>
+                                                )}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colSpan={3}>
+                                                <div className='text-end'>
+                                                <Link to={'/transaksi/'+value.id} className='btn btn-secondary btn-sm'>Lihat Detail</Link>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </>
+            )
+        }
+
+        return(
+            <>
+                <table className='table table-hover table-stripped table-bordered'>
+                    <thead>
+                        <tr>
+                            <th>Transaksi ID</th>
+                            <th>Status Pembayaran</th>
+                            <th>Dibuat Pada</th>
+                            <th>#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            stateLocal.data_transaksi.map((value, index) =>
+                            (
+                                <>
+                                    <tr key={index}>
+                                        <td>{value.transaksi_id}</td>
+                                        <td>
+                                            {value.status === 'PENDING' ? (
+                                                <span className='badge bg-warning text-dark'>PENDING</span>
+                                            ) : (
+                                                <span className='badge bg-success'>PAID</span>
+                                            )}
+                                        </td>
+                                        <td>{value.created_at}</td>
+                                        <td>
+                                            <Link to={'/transaksi/'+value.id} className='btn btn-secondary btn-sm'>Lihat Detail</Link>
+                                        </td>
+                                    </tr>
+                                </>
+                            ))
+                        }
+                    </tbody>
+                </table>
+                
+            </>
+        )
+    }
+
 
     return(
         <>
@@ -128,39 +212,9 @@ const TransaksiSaya = () =>
                         <p className='text-center'>Tidak ada data transaksi yang ditemukan.</p>
                     ) : (
                         <div className='table-responsive mt-3'>
-                            <table className='table table-hover table-stripped table-bordered'>
-                                <thead>
-                                    <tr>
-                                        <th>Transaksi ID</th>
-                                        <th>Status Pembayaran</th>
-                                        <th>Dibuat Pada</th>
-                                        <th>#</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        stateLocal.data_transaksi.map((value, index) =>
-                                        (
-                                            <>
-                                                <tr key={index}>
-                                                    <td>{value.transaksi_id}</td>
-                                                    <td>
-                                                        {value.status === 'PENDING' ? (
-                                                            <span className='badge bg-warning text-dark'>PENDING</span>
-                                                        ) : (
-                                                            <span className='badge bg-success'>PAID</span>
-                                                        )}
-                                                    </td>
-                                                    <td>{value.created_at}</td>
-                                                    <td>
-                                                        <Link to={'/transaksi/'+value.id} className='btn btn-secondary btn-sm'>Lihat Detail</Link>
-                                                    </td>
-                                                </tr>
-                                            </>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
+                            
+
+                            {layoutTransaksi()}
                         </div>
                     )}
                 </div>
