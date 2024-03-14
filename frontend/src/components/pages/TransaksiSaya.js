@@ -16,8 +16,8 @@ const TransaksiSaya = () =>
         load_transaksi: true,
         data_transaksi_backup: [],
         data_transaksi: [],
-        status_pembayaran: 'semua',
-        input_pencarian: ''
+        input_pencarian: '',
+        status_pembayaran: 'SEMUA'
     })
 
     useEffect(() =>
@@ -45,11 +45,12 @@ const TransaksiSaya = () =>
                         data_transaksi.push(element)
                 });
 
-                setStateLocal({
+                setStateLocal(prevState => ({
+                    ...prevState,
                     load_transaksi: false,
                     data_transaksi_backup: data_transaksi,
                     data_transaksi: data_transaksi
-                })
+                }))
             })
             .catch(error => {
                 alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message})`)
@@ -57,6 +58,40 @@ const TransaksiSaya = () =>
             })
         }
     }, [])
+
+
+    const filterData = (e, type) => 
+    {
+        const value = e.target.value.toUpperCase();
+        let { data_transaksi_backup, input_pencarian, status_pembayaran } =
+            stateLocal;
+    
+        if (type === "search")
+            input_pencarian = value;
+
+        if (type === "status")
+            status_pembayaran = value;
+    
+        const data_baru = data_transaksi_backup.filter((item) => 
+        {
+            const transaksi_id = item.transaksi_id.toString();
+            const status = item.status;
+    
+            return (
+                (transaksi_id === input_pencarian || input_pencarian === "") &&
+                (status === status_pembayaran || status_pembayaran === "SEMUA")
+            );
+        });
+    
+        setStateLocal((prevState) => ({
+            ...prevState,
+            input_pencarian,
+            status_pembayaran,
+            data_transaksi: data_baru,
+        }));
+    };
+    
+    
 
     return(
         <>
@@ -70,14 +105,14 @@ const TransaksiSaya = () =>
                     <div className='row align-items-center'>
                         <div className='col-md-8 mb-3'>
                             <label htmlFor='pencarian' className='form-label'>Pencarian</label>
-                            <input type='text' id="pencarian" className='form-control' placeholder='Cari berdasarkan transaksi id ...'/>
+                            <input type='text' id="pencarian" className='form-control' onChange={(e) => filterData(e, 'search')} placeholder='Cari berdasarkan transaksi id ...'/>
                         </div>
                         <div className='col-md-4 mb-3'>
                             <label htmlFor='status_pembayaran' className='form-label'>Status Pembayaran</label>
-                            <select className='form-select' id="status_pembayaran">
-                                <option value="semua">Semua</option>
+                            <select className='form-select' id="status_pembayaran" onChange={(e) => filterData(e, 'status')}>
+                                <option value="semua">- Semua</option>
                                 <option value="pending">- Belum Lunas</option>
-                                <option value="lunas">- Lunas</option>
+                                <option value="paid">- Lunas</option>
                             </select>
                         </div>
                     </div>
@@ -104,10 +139,10 @@ const TransaksiSaya = () =>
                                 </thead>
                                 <tbody>
                                     {
-                                        stateLocal.data_transaksi.map((value, _) =>
+                                        stateLocal.data_transaksi.map((value, index) =>
                                         (
                                             <>
-                                                <tr>
+                                                <tr key={index}>
                                                     <td>{value.transaksi_id}</td>
                                                     <td>
                                                         {value.status === 'PENDING' ? (
