@@ -11,6 +11,8 @@
 <b>Penggunaan Cookies Pengguna</b>
 * Pastikan untuk nama domain pada function setCookie(). (Contoh: localhost)
 
+<br/>
+
 <b>Untuk Backend (Mock Server -> json-server) - Port 3001</b>
 * cd ./backend/
 * npm install -g json-server
