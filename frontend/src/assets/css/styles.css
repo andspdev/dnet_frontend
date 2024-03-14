@@ -223,6 +223,17 @@ a {
     width: auto;
     display: inline-block;
     margin: 0 5px;
-    
-    
+}
+
+.icon-operator-input {
+    background: #fff;
+    border-left: none!important;
+}
+
+.icon-operator-input img {
+    max-width: 70px;
+    width: auto;
+    max-height: 20px;
+    height: auto;
+    width: auto;
 }

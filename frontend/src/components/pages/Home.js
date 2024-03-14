@@ -21,7 +21,8 @@ const Home = () =>
         data_paketan: [],
         load_data_paketan: true,
         is_submit_paketan: false,
-        error_no_tlp: false
+        error_no_tlp: false,
+        kategori_kartu: 'none'
     })
 
     document.title = stateGlobal.title_web
@@ -109,6 +110,8 @@ const Home = () =>
     const inputNoHp = (e) =>
     {
         const value = e.target.value
+        const cek_operator = nomorHPOperator(value)
+        const is_valid_no = isValidPhoneNumber(value)
 
         if (value === '')
         {
@@ -122,7 +125,9 @@ const Home = () =>
         setStateLocal(prevState => ({
             ...prevState,
             nomor_telepon: value,
-            error_no_tlp: !isValidPhoneNumber(value)
+            error_no_tlp: !is_valid_no,
+            data_paketan: is_valid_no ? stateLocal.data_paketan : [],
+            kategori_kartu: cek_operator
         }))
 
     }
@@ -162,7 +167,27 @@ const Home = () =>
                     <form method="post" onSubmit={(e) => cekPaketData(e)}>
                         <div className="mb-3">
                             <label className="form-label" htmlFor="input_nomor_hp">Ayo isi paket datamu di sini</label>
-                            <input type="text" placeholder="Nomor telepon (08xxx)" className={'form-control' + (stateLocal.error_no_tlp ? ' is-invalid' : '')} onChange={(e) => inputNoHp(e)} />
+
+                            <div className="input-group">
+                                <input type="text" placeholder="Nomor telepon (08xxx)" className={'form-control' + (stateLocal.error_no_tlp ? ' is-invalid' : '')} onChange={(e) => inputNoHp(e)} />
+                                {
+                                    stateLocal.kategori_kartu !== 'none' && 
+                                    isValidPhoneNumber(stateLocal.nomor_telepon) ?
+                                        (
+                                            <div className="input-group-text icon-operator-input">
+                                                {stateLocal.kategori_kartu === 'telkomsel' ?
+                                                (
+                                                    <img src={OperatorTelkomsel} alt="Telkomsel"/>
+                                                ) :
+                                                stateLocal.kategori_kartu === 'axis' ? (
+                                                    <img src={OperatorAxis} alt="Axis"/>
+                                                ) : ''}
+                                            </div>
+                                        )
+                                    : ''
+                                } 
+
+                            </div>
 
                             {stateLocal.error_no_tlp ? (
                                 <div className="invalid-feedback">Nomor telepon tidak valid.</div>
