@@ -102,8 +102,8 @@ const Login = () =>
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="password" className="form-label">Password</label>
-                        <input type="password" id="password" placeholder="Password" className="form-control" onChange={(e) => setStateLocal(prevState => ({
+                        <label htmlFor="password" className="form-label">Kata Sandi</label>
+                        <input type="password" id="password" placeholder="Kata Sandi" className="form-control" onChange={(e) => setStateLocal(prevState => ({
                             ...prevState,
                             input_password: e.target.value
                         }))} disabled={stateLocal.proses_login} />
