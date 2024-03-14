@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Header } from "../includes/Header";
 import ImageMobileBrowser from '../../assets/images/mobile-browsers.svg'
 import ImageLoader from '../../assets/images/loader.svg'
-import { nomorHPOperator, formatUang } from '../includes/Functions'
+import { nomorHPOperator, formatUang, isValidPhoneNumber } from '../includes/Functions'
 import { Context } from "../includes/GlobalState";
 import axios from 'axios'
 import { Link } from "react-router-dom";
@@ -14,7 +14,8 @@ const Home = () =>
         nomor_telepon: '',
         data_paketan: [],
         load_data_paketan: true,
-        is_submit_paketan: false
+        is_submit_paketan: false,
+        error_no_tlp: false
     })
 
     document.title = stateGlobal.title_web
@@ -25,45 +26,47 @@ const Home = () =>
 
         const cek_operator = nomorHPOperator(stateLocal.nomor_telepon)
 
-        setStateLocal(prevState => ({
-            ...prevState,
-            is_submit_paketan: true,
-            load_data_paketan: true
-        }))
-
-
-        axios({
-            url: `${stateGlobal.url_api}/paket_data`,
-            method: 'GET'
-        })
-        .then(data => 
+        if (isValidPhoneNumber(stateLocal.nomor_telepon))
         {
-            const response = data.data
-
-            let get_data_operator = [];
-            response.forEach(value =>
-            {
-                if (value.kategori_kartu === cek_operator)
-                    get_data_operator.push(value)
-            });
-
             setStateLocal(prevState => ({
                 ...prevState,
                 is_submit_paketan: true,
-                load_data_paketan: false,
-                data_paketan: get_data_operator
+                load_data_paketan: true
             }))
-        })
-        .catch(error => {
-            alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message})`)
-            console.log('Error Paket Data: ', error)
 
-            setStateLocal(prevState => ({
-                ...prevState,
-                is_submit_paketan: false,
-                load_data_paketan: false
-            }))
-        })
+            axios({
+                url: `${stateGlobal.url_api}/paket_data`,
+                method: 'GET'
+            })
+            .then(data => 
+            {
+                const response = data.data
+
+                let get_data_operator = [];
+                response.forEach(value =>
+                {
+                    if (value.kategori_kartu === cek_operator)
+                        get_data_operator.push(value)
+                });
+
+                setStateLocal(prevState => ({
+                    ...prevState,
+                    is_submit_paketan: true,
+                    load_data_paketan: false,
+                    data_paketan: get_data_operator
+                }))
+            })
+            .catch(error => {
+                alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message})`)
+                console.log('Error Paket Data: ', error)
+
+                setStateLocal(prevState => ({
+                    ...prevState,
+                    is_submit_paketan: false,
+                    load_data_paketan: false
+                }))
+            })
+        }
     }
 
 
@@ -112,8 +115,10 @@ const Home = () =>
 
         setStateLocal(prevState => ({
             ...prevState,
-            nomor_telepon: value
+            nomor_telepon: value,
+            error_no_tlp: !isValidPhoneNumber(value)
         }))
+
     }
 
 
@@ -142,7 +147,11 @@ const Home = () =>
                     <form method="post" onSubmit={(e) => cekPaketData(e)}>
                         <div className="mb-3">
                             <label className="form-label" htmlFor="input_nomor_hp">Ayo isi paket datamu di sini</label>
-                            <input type="text" placeholder="Nomor telepon (08xxx)" className="form-control" onChange={(e) => inputNoHp(e)} />
+                            <input type="text" placeholder="Nomor telepon (08xxx)" className={'form-control' + (stateLocal.error_no_tlp ? ' is-invalid' : '')} onChange={(e) => inputNoHp(e)} />
+
+                            {stateLocal.error_no_tlp ? (
+                                <div className="invalid-feedback">Nomor telepon tidak valid.</div>
+                            ) : ''}
                         </div>
 
                         <div className="text-center">

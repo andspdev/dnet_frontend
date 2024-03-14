@@ -114,3 +114,7 @@ export const getCurrentDateTime = (dateTime = null) => {
         ('0' + seconds).slice(-2);
     return formattedTime;
 }
+
+export const isValidPhoneNumber = (phoneNumber) => {
+    return /^(^\+62\s?|^08)\d{9,}$/.test(phoneNumber);
+}
