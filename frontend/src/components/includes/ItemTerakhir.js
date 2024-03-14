@@ -29,7 +29,8 @@ const ItemTerakhir = () =>
                 pengguna_id: get_user,
                 created_at: getCurrentDateTime(),
                 status: "PENDING",
-                transaksi_id: new Date().getTime()
+                transaksi_id: new Date().getTime(),
+                paid_at: '-'
             }
 
             axios({
