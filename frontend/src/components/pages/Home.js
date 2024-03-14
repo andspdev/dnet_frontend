@@ -7,6 +7,12 @@ import { Context } from "../includes/GlobalState";
 import axios from 'axios'
 import { Link } from "react-router-dom";
 
+import OperatorAxis from '../../assets/images/operator/axis.png'
+import OperatorTelkomsel from '../../assets/images/operator/telkomsel.png'
+import OperatorIndosat from '../../assets/images/operator/indosat.png'
+import OperatorSmartfren from '../../assets/images/operator/smartfren.png'
+import OperatorTri from '../../assets/images/operator/tri.png'
+
 const Home = () =>
 {
     const [stateGlobal] = useContext(Context)
@@ -136,6 +142,14 @@ const Home = () =>
                             <div className="mb-4">
                                 <h2>Paket Data Internet All Operator</h2>
                                 <p>Isi ulang dengan mudah, nggak pakai ribet dan paling murah. Ayo beli paket data kamu disini!</p>
+
+                                <div className="icon-operator mt-4">
+                                    <div className="item"><img src={OperatorTelkomsel} alt="Telkomsel" /></div>
+                                    <div className="item"><img src={OperatorSmartfren} alt="Smartfren" /></div>
+                                    <div className="item"><img src={OperatorAxis} alt="Axis" /></div>
+                                    <div className="item"><img src={OperatorTri} alt="Tri" /></div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

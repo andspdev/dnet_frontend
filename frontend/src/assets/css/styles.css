@@ -197,3 +197,26 @@ a {
 .loader img {
     width: 40px;
 }
+
+.icon-operator .item {
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.icon-operator img {
+    max-width: 80px;
+    width: auto;
+    max-height: 20px;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    margin: 0 5px;
+    
+    
+}

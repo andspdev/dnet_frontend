@@ -15,35 +15,35 @@ export const Header = () =>
                         <span className="navbar-toggler-icon"></span>
                     </button>
 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse mt-3 mt-lg-0" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link mx-2" to="/">Beranda</Link>
+                                <Link className="nav-link mx-0 mx-lg-2" to="/">Beranda</Link>
                             </li>
 
                             {getUser !== '' ? (
                                 <>
                                     <li className="nav-item">
-                                        <Link className="nav-link mx-2" to='/transaksi'>Transaksi Saya</Link>
+                                        <Link className="nav-link mx-0 mx-lg-2" to='/transaksi'>Transaksi Saya</Link>
                                     </li>
 
                                     <li className="nav-item">
-                                        <Link className="nav-link mx-2" to='/profil'>Profil Saya</Link>
+                                        <Link className="nav-link mx-0 mx-lg-2" to='/profil'>Profil Saya</Link>
                                     </li>
 
                                     <li className="nav-item">
-                                        <Link className="nav-link mx-2" to='/logout'>Keluar</Link>
+                                        <Link className="nav-link mx-0 mx-lg-2" to='/logout'>Keluar</Link>
                                     </li>
                                 </>
                                 
                             ) : (
                                 <>                                
                                     <li className="nav-item">
-                                        <Link className="nav-link mx-2" to='/login'>Masuk</Link>
+                                        <Link className="nav-link mx-0 mx-lg-2" to='/login'>Masuk</Link>
                                     </li>
 
                                     <li className="nav-item">
-                                        <Link className="nav-link mx-2" to='/register'>Buat Akun</Link>
+                                        <Link className="nav-link mx-0 mx-lg-2" to='/register'>Buat Akun</Link>
                                     </li>
                                 </>                                
                             )}
