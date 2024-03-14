@@ -90,9 +90,15 @@ export const formatUang = (angka) =>
 	return "Rp" + parts[0];
 }
 
-export const getCurrentDateTime = ()=> 
-{
-    const currentTime = new Date();
+export const getCurrentDateTime = (dateTime = null) => {
+    let currentTime;
+    if (dateTime && typeof dateTime === 'object' && dateTime instanceof Date) {
+        currentTime = dateTime;
+    } else {
+        currentTime = new Date();
+    }
+
+	
     const year = currentTime.getFullYear();
     const month = currentTime.getMonth() + 1;
     const day = currentTime.getDate();
@@ -100,11 +106,11 @@ export const getCurrentDateTime = ()=>
     const minutes = currentTime.getMinutes();
     const seconds = currentTime.getSeconds();
 
-    const formattedTime = year + '-' + 
-                        ('0' + month).slice(-2) + '-' + 
-                        ('0' + day).slice(-2) + ' ' + 
-                        ('0' + hours).slice(-2) + ':' + 
-                        ('0' + minutes).slice(-2) + ':' + 
-                        ('0' + seconds).slice(-2);
+    const formattedTime = year + '-' +
+        ('0' + month).slice(-2) + '-' +
+        ('0' + day).slice(-2) + ' ' +
+        ('0' + hours).slice(-2) + ':' +
+        ('0' + minutes).slice(-2) + ':' +
+        ('0' + seconds).slice(-2);
     return formattedTime;
 }
