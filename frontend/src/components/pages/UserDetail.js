@@ -62,7 +62,7 @@ const UserDetail = () =>
                 console.log('Error Fetch Pengguna: ', error)
             })
         }
-    }, []);
+    }, [navigate, stateGlobal.url_api, stateGlobal.title_web]);
 
     return (
         <>
