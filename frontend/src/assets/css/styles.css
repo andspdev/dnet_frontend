@@ -5,6 +5,22 @@
     --box-shadow-color: #77777726
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
 body {
     background: #fff;
     padding: 0;
