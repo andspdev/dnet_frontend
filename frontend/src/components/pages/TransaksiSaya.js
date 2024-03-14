@@ -153,7 +153,7 @@ const TransaksiSaya = () =>
                                                     </td>
                                                     <td>{value.created_at}</td>
                                                     <td>
-                                                        <Link to={'/transaksi/'+value.id} className='btn btn-secondary btn-sm'>Detail</Link>
+                                                        <Link to={'/transaksi/'+value.id} className='btn btn-secondary btn-sm'>Lihat Detail</Link>
                                                     </td>
                                                 </tr>
                                             </>
