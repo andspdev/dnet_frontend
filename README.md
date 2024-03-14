@@ -40,7 +40,12 @@
 
 --------------------------------
 
-<h3>Tambah Pengguna (Manual)</h3>
+<h3>Tambah Pengguna</h3>
+<p>Pengguna dapat ditambah manual ataupun melalui halaman pendaftaran akun. Jika ingin ditambahkan secara manual, sebagai berikut:</p>
+
+<br/>
+
+<b>Tambah manual</b><br/>
 * Tambahkan pada field array pengguna di db.json
 
 Dengan data field (sebagai contoh):
