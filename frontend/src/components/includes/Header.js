@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { getCookie } from '../includes/Functions'
+import LogoPaketanly from '../../assets/images/logo-paketanly.png'
 
 export const Header = () =>
 {
@@ -9,7 +10,9 @@ export const Header = () =>
         <>
             <nav className='navbar navbar-expand-lg navbar-custom fixed-top'>
                 <div className='container'>
-                    <Link to="/" className='navbar-brand'>Logo</Link>
+                    <Link to="/" className='navbar-brand'>
+                        <img src={LogoPaketanly} alt="Logo Paketanly" className='logo' />
+                    </Link>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                         <span className="navbar-toggler-icon"></span>
