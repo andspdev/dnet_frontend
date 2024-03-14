@@ -36,3 +36,39 @@
 * Detail Transaksi + Status Pembayaran
 * Profil Saya
 * Logout
+
+
+--------------------------------
+
+<h3>Tambah Pengguna (Manual)</h3>
+* Tambahkan pada field array pengguna di db.json
+
+Dengan data field (sebagai contoh):
+<pre>
+{
+    "id": "98d8",
+    "nama": "Pengguna 1",
+    "email": "pengguna1@gmail.com",
+    "password": "12345678",
+    "bergabung_pada": 1710429958794
+}
+</pre>
+
+<br/>
+
+Maka db.json akan seperti:
+<pre>
+{
+  "pengguna": [
+    {
+      "id": "98d8",
+      "nama": "Pengguna 1",
+      "email": "pengguna1@gmail.com",
+      "password": "12345678",
+      "bergabung_pada": 1710429958794
+    }
+  ],
+  ...
+}  
+</pre>
+</pre>
