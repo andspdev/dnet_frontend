@@ -55,7 +55,7 @@ const Login = () =>
     
                 if (get_data_user !== undefined)
                 {
-                    setCookie('user_login', get_data_user.id, 30, '/', 'localhost', true);
+                    setCookie('user_login', get_data_user.id, 30, '/', stateGlobal.domain_api, true);
                     navigate('/')
                 }
                 else
