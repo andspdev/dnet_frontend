@@ -190,7 +190,7 @@ const Home = () =>
                             </div>
 
                             {stateLocal.error_no_tlp ? (
-                                <div className="invalid-feedback">Nomor telepon tidak valid.</div>
+                                <div className="invalid-feedback d-block">Nomor telepon tidak valid.</div>
                             ) : ''}
                         </div>
 
