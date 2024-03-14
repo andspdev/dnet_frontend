@@ -113,6 +113,10 @@ const Login = () =>
                         <button className="btn btn-primary btn-lg">Masuk</button>
                     </div>
 
+                    <div className="text-center my-3">
+                        <p>Belum punya akun? <Link to="/register">Buat akun</Link></p>
+                    </div>
+
                     <div className="text-center">
                         <Link to="/">&laquo; Kembali</Link>
                     </div>

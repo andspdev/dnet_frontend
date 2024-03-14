@@ -36,11 +36,8 @@ a {
     padding: 40px 25px;
     border-radius: 15px;
     max-width: 480px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: calc(100% - 30px);
-    transform: translate(-50%, -50%);
+    margin: 6em auto;
     box-shadow: 0 0 8px #eee;
 }
 
