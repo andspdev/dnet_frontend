@@ -42,6 +42,7 @@
 * Kelola Transaksi
 * Detail Transaksi + Status Pembayaran
 * Profil Saya
+* Sunting Profil
 * Logout
 
 
