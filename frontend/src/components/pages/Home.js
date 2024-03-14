@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { Header } from "../includes/Header";
 import ImageMobileBrowser from '../../assets/images/mobile-browsers.svg'
 import ImageLoader from '../../assets/images/loader.svg'
