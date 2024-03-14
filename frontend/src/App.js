@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GlobalState, Context } from './components/includes/GlobalState';
-import { BrowserRouter, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/styles.css';
@@ -10,6 +10,7 @@ import Login from "./components/pages/Login";
 import DetailPaket from "./components/pages/DetailPaket";
 import Logout from "./components/pages/Logout";
 import TransaksiSaya from "./components/pages/TransaksiSaya";
+import DetailTransaksi from "./components/pages/DetailTransaksi";
 
 const App = () =>
 {
@@ -23,7 +24,7 @@ const App = () =>
                     <Route path="/login" element={<Login/>} />
                     <Route path="/paket-data/:id" element={<DetailPaket/>} /> 
                     <Route path="/transaksi" element={<TransaksiSaya/>} />
-                    <Route path="/transaksi/:id" element={null} />
+                    <Route path="/transaksi/:id" element={<DetailTransaksi/>} />
                     <Route path="/logout" element={<Logout/>} /> 
                 </Routes>
             </BrowserRouter>
