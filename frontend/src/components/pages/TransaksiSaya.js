@@ -7,10 +7,11 @@ import axios from 'axios';
 import ItemTerakhir from "../includes/ItemTerakhir";
 import ImageLoader from '../../assets/images/loader.svg'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const TransaksiSaya = () =>
 {
+    const navigate = useNavigate()
     const [ stateGlobal ] = useContext(Context)
     const [ stateLocal, setStateLocal ] = useState({
         load_transaksi: true,
@@ -26,7 +27,7 @@ const TransaksiSaya = () =>
 
         if (get_user === '')
         {
-            window.location.href = '/login';
+            navigate('/login')
         }
         else
         {
