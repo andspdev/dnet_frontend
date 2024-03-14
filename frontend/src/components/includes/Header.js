@@ -8,7 +8,7 @@ export const Header = () =>
     return(
         <>
             <nav className='navbar navbar-expand-lg navbar-custom fixed-top'>
-                <div className='container-fluid'>
+                <div className='container'>
                     <Link to="/" className='navbar-brand'>Logo</Link>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
