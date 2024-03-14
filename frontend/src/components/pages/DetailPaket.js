@@ -5,7 +5,7 @@ import { Context } from "../includes/GlobalState";
 import { formatUang, getCookie } from "../includes/Functions";
 
 import { Header } from "../includes/Header";
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Footer from "../includes/Footer";
 import ItemTerakhir from "../includes/ItemTerakhir";
 
@@ -13,6 +13,7 @@ import ItemTerakhir from "../includes/ItemTerakhir";
 
 const DetailPaket = () =>
 {
+    const navigate = useNavigate()
     const { id } = useParams()
     const { state } = useLocation()
     const [ stateGlobal, setStateGlobal ] = useContext(Context)
@@ -27,7 +28,7 @@ const DetailPaket = () =>
 
         if (get_user === '')
         {
-            window.location.href = '/login';
+            navigate('/login');
         }
         else
         {
