@@ -241,7 +241,7 @@ const Home = () =>
 
                 <div style={{paddingTop: '8em'}} className="text-center">
                     Copyright &copy; 2024 <Link to="/">{stateGlobal.title_web}</Link><br/>
-                    Dibuat oleh <a href="https://www.andsp.id" target="_blank" rel="noreferrer">Andreas Pandu Pamungkas</a>. 
+                    Oleh <a href="https://www.andsp.id" target="_blank" rel="noreferrer">Andreas Pandu Pamungkas</a>. 
                     All Rights Reserved.
                 </div>
             </div>
