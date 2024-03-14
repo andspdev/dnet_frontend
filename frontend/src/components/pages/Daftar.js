@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom'
 import { Context } from "../includes/GlobalState";
-import { getCookie, getCurrentDateTime } from '../includes/Functions'
+import { getCookie } from '../includes/Functions'
 import axios from 'axios'
 
 const Daftar = () =>

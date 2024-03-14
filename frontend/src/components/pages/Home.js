@@ -148,6 +148,7 @@ const Home = () =>
                                     <div className="item"><img src={OperatorSmartfren} alt="Smartfren" /></div>
                                     <div className="item"><img src={OperatorAxis} alt="Axis" /></div>
                                     <div className="item"><img src={OperatorTri} alt="Tri" /></div>
+                                    <div className="item"><img src={OperatorIndosat} alt="indosat" /></div>
                                 </div>
 
                             </div>
