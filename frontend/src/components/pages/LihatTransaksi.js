@@ -7,7 +7,6 @@ import { getCookie, getCurrentDateTime } from "../includes/Functions"
 import { Header } from '../includes/Header'
 import { Link } from "react-router-dom"
 
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
 import * as bootstrap from 'bootstrap'
 
 

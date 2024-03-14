@@ -5,7 +5,6 @@ import ImageLoader from '../../assets/images/loader.svg'
 import { nomorHPOperator, formatUang } from '../includes/Functions'
 import { Context } from "../includes/GlobalState";
 import axios from 'axios'
-import Footer from "../includes/Footer";
 import { Link } from "react-router-dom";
 import ItemTerakhir from "../includes/ItemTerakhir";
 
@@ -175,7 +174,6 @@ class Home extends Component
                     </div>
                 </div>
 
-                <Footer />
                 <ItemTerakhir />
             </>
         )

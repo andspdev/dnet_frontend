@@ -1,5 +1,4 @@
 import { Header } from '../includes/Header'
-import Footer from '../includes/Footer'
 import { useContext, useEffect, useState } from 'react'
 import { Context } from "../includes/GlobalState";
 import { getCookie } from '../includes/Functions';
@@ -166,10 +165,6 @@ const TransaksiSaya = () =>
                     )}
                 </div>
             </div>
-
-            {stateLocal.data_transaksi.length > 20 ? (
-                <Footer/>
-            ) : ''}
 
             <ItemTerakhir/>
         </>
