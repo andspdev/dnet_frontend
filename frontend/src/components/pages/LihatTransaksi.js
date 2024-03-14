@@ -184,7 +184,7 @@ const LihatTransaksi = () =>
 
                                             <div className="row mb-2">
                                                 <div className="col-md-4 mb-2">Keterangan</div>
-                                                <div className="col-md-8">{stateLocal.fetch_transaksi.keterangan}</div>
+                                                <div className="col-md-8">{stateLocal.fetch_transaksi.keterangan} ({stateLocal.detail_transaksi.keterangan})</div>
                                             </div>
                                         </div>
 
