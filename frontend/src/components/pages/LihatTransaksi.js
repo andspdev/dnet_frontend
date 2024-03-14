@@ -4,8 +4,10 @@ import ImageLoader from '../../assets/images/loader.svg'
 import axios from "axios"
 import { Context } from "../includes/GlobalState"
 import { getCookie } from "../includes/Functions"
+import { Header } from '../includes/Header'
+import Footer from '../includes/Footer'
 
-const DetailTransaksi = () =>
+const LihatTransaksi = () =>
 {
     const { id } = useParams()
     const [ stateGlobal ] = useContext(Context)
@@ -17,6 +19,8 @@ const DetailTransaksi = () =>
     useEffect(() =>
     {
         const user_id = getCookie('user_login')
+
+        console.log(user_id)
 
         axios({
             url: `${stateGlobal.url_api}/transaksi_user/${id}`,
@@ -32,26 +36,24 @@ const DetailTransaksi = () =>
             {
                 setStateLocal(prevState => ({
                     ...prevState,
-                    is_load_detail: false
+                    is_load_detail: true
                 }))
             }
+            console.log('masuk disni')
         })
-    }, [])
+        .catch(error =>
+        {
+            alert(`Terjadi kesalahan saat mengambil data. (Error: ${error.message})`)
+            console.log('Error Detail Transaksi: ', error)            
+        })
+    }, [id, stateGlobal.url_api])
 
 
     return(
         <>
-            {stateLocal.is_load_detail ? (
-                <div className="loader-full">
-                    <img src={ImageLoader} alt="Loader"/>
-                </div>
-            ) : (
-                <>
-
-                </>
-            )}
+            
         </>
     )
 }
 
-export default DetailTransaksi
+export default LihatTransaksi

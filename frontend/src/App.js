@@ -10,7 +10,7 @@ import Login from "./components/pages/Login";
 import DetailPaket from "./components/pages/DetailPaket";
 import Logout from "./components/pages/Logout";
 import TransaksiSaya from "./components/pages/TransaksiSaya";
-import DetailTransaksi from "./components/pages/DetailTransaksi";
+import LihatTransaksi from "./components/pages/LihatTransaksi";
 
 const App = () =>
 {
@@ -24,7 +24,7 @@ const App = () =>
                     <Route path="/login" element={<Login/>} />
                     <Route path="/paket-data/:id" element={<DetailPaket/>} /> 
                     <Route path="/transaksi" element={<TransaksiSaya/>} />
-                    <Route path="/transaksi/:id" element={<DetailTransaksi/>} />
+                    <Route path="/transaksi/:id" element={<LihatTransaksi/>} />
                     <Route path="/logout" element={<Logout/>} /> 
                 </Routes>
             </BrowserRouter>
