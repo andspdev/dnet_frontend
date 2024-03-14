@@ -58,7 +58,7 @@ const TransaksiSaya = () =>
                 console.log('Error Transaksi: ', error)
             })
         }
-    }, [stateGlobal.url_api, stateGlobal.title_web])
+    }, [stateGlobal.url_api, stateGlobal.title_web, navigate])
 
 
     const filterData = (e, type) => 

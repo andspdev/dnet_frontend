@@ -58,7 +58,7 @@ const DetailPaket = () =>
                 });
             }
         }
-    }, [id, state, stateGlobal.url_api, stateGlobal.title_web])
+    }, [id, state, stateGlobal.url_api, stateGlobal.title_web, navigate])
 
     const fetch_data = stateLocal.response_detail
 
