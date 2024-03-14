@@ -58,6 +58,8 @@ a {
 
 .navbar-custom {
     padding: 15px 20px;
+    background: #fff;
+    z-index: 1000;
     box-shadow: 0 4px 8px 0 var(--box-shadow-color);
 }
 
