@@ -108,8 +108,14 @@ const DetailPaket = () =>
                             </form>                     
                         </div>
                     </div>
+
                     
-                    <ItemTerakhir />
+                    {stateGlobal.terakhir_pilih_item !== '' ? (
+                        <>
+                            <div style={{paddingBottom: '7em'}}></div>
+                            <ItemTerakhir />
+                        </>
+                    ) : ''}
                 </>
             )}
         </>
