@@ -13,6 +13,8 @@
 * npm install -g json-server
 * npx json-server db.json -p 3001
 
+<br/>
+
 <b>Untuk Frontend (ReactJS) - Default port 3000</b>
 * cd ./frontend/
 * npm install
