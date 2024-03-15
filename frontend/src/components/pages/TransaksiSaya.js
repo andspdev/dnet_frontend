@@ -1,9 +1,9 @@
-import { Header } from '../includes/Header'
+import Header from "../includes/Header";
+import Footer from '../includes/Footer'
 import { useContext, useEffect, useState } from 'react'
 import { Context } from "../includes/GlobalState";
 import { getCookie, isMobileDevice } from '../includes/Functions';
 import axios from 'axios';
-import ItemTerakhir from "../includes/ItemTerakhir";
 import ImageLoader from '../../assets/images/loader.svg'
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -220,7 +220,7 @@ const TransaksiSaya = () =>
                 </div>
             </div>
 
-            <ItemTerakhir/>
+            <Footer/>
         </>
     )
 }

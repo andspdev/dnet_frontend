@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useContext } from "react"
 import { Context } from "./GlobalState"
-import { getCookie, getCurrentDateTime } from "../includes/Functions";
+import { getCookie, getCurrentDateTime, isMobileDevice } from "../includes/Functions";
 import axios from 'axios'
 
 const ItemTerakhir = () =>
@@ -55,22 +55,42 @@ const ItemTerakhir = () =>
         return (
             <>
                 <div className="last-item-beli">
-                    <div className="d-flex align-items-center">
-                        <div className="flex-grow-1">
-                            <div className="desc">
-                                <b>{fetch_data.items.nama_paket}</b>
-                            </div>
 
-                            <div className="desc">
-                                <p className="m-0">{fetch_data.items.kategori_kartu.toUpperCase()} - {fetch_data.nomor_telepon}</p>
+                    {
+                        !isMobileDevice() ? (
+                            <div className="d-flex align-items-center">
+                                <div className="flex-grow-1">
+                                    <div className="desc">
+                                        <b>{fetch_data.items.nama_paket}</b>
+                                    </div>
+        
+                                    <div className="desc">
+                                        <p className="m-0">{fetch_data.items.kategori_kartu.toUpperCase()} - {fetch_data.nomor_telepon}</p>
+                                    </div>
+                                </div>                        
+        
+                                <div className="ms-auto text-end">
+                                    <button className="btn btn-danger mb-2 mx-2 d-inline-block" onClick={() => batalkanItem()}>Hapus</button>
+                                    <button className="btn btn-primary mb-2" onClick={() => lanjutkanPembayaran()}>Lanjutkan</button>
+                                </div>
                             </div>
-                        </div>                        
+                        ) : (
+                            <div className='text-center'>
+                                <div className="desc">
+                                    <b>{fetch_data.items.nama_paket}</b>
+                                </div>
+    
+                                <div className="desc">
+                                    <p className="m-0">{fetch_data.items.kategori_kartu.toUpperCase()} - {fetch_data.nomor_telepon}</p>
+                                </div>
 
-                        <div className="ms-auto text-end">
-                            <button className="btn btn-danger mb-2 mx-2 d-inline-block" onClick={() => batalkanItem()}>Batalkan</button>
-                            <button className="btn btn-primary mb-2" onClick={() => lanjutkanPembayaran()}>Lanjutkan</button>
-                        </div>
-                    </div>
+                                <div className='mt-3'>
+                                    <button className="btn btn-danger btn-sm px-3 py-2 mb-2 mx-2 d-inline-block" onClick={() => batalkanItem()}>Hapus</button>
+                                    <button className="btn btn-primary btn-sm px-3 py-2 mb-2" onClick={() => lanjutkanPembayaran()}>Lanjutkan</button>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
             </>    
         )

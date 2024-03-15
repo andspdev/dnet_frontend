@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Header } from "../includes/Header";
+import Header from "../includes/Header";
 import ImageMobileBrowser from '../../assets/images/mobile-browsers.svg'
 import ImageLoader from '../../assets/images/loader.svg'
 import { nomorHPOperator, formatUang, isValidPhoneNumber } from '../includes/Functions'
@@ -12,6 +12,7 @@ import OperatorTelkomsel from '../../assets/images/operator/telkomsel.png'
 import OperatorIndosat from '../../assets/images/operator/indosat.png'
 import OperatorSmartfren from '../../assets/images/operator/smartfren.png'
 import OperatorTri from '../../assets/images/operator/tri.png'
+import Footer from "../includes/Footer";
 
 const Home = () =>
 {
@@ -238,12 +239,7 @@ const Home = () =>
                     )}
                 </div>
 
-
-                <div style={{paddingTop: '8em'}} className="text-center px-3">
-                    Copyright &copy; 2024 <Link to="/">{stateGlobal.title_web}</Link><br/>
-                    Oleh <a href="https://www.andsp.id" target="_blank" rel="noreferrer">Andreas Pandu</a>. 
-                    All Rights Reserved.
-                </div>
+                <Footer/>
             </div>
 
         </>

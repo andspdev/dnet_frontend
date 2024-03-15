@@ -1,10 +1,11 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from "../includes/GlobalState";
-import { Header } from '../includes/Header'
+import Header from "../includes/Header";
 import { Link, useNavigate } from 'react-router-dom';
 import ImageLoader from '../../assets/images/loader.svg'
 import axios from 'axios'
 import { getCookie } from '../includes/Functions';
+import Footer from '../includes/Footer';
 
 const SettingsProfile = () =>
 {
@@ -253,6 +254,8 @@ const SettingsProfile = () =>
                             </div>
                         </form>
                     </div>
+
+                    <Footer/>
                 </>
             )}
         </>

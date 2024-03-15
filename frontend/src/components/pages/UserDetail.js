@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
 import { Context } from "../includes/GlobalState";
-import { Header } from '../includes/Header'
+import Header from "../includes/Header";
 import { Link, useNavigate } from 'react-router-dom';
 import ImageUserIcon from '../../assets/images/user-icon.svg'
 import ImageLoader from '../../assets/images/loader.svg'
 import axios from 'axios'
 import { getCookie, getCurrentDateTime } from '../includes/Functions';
+import Footer from '../includes/Footer';
 
 const UserDetail = () =>
 {
@@ -114,6 +115,8 @@ const UserDetail = () =>
 
                         </div>
                     </div>
+
+                    <Footer/>
                 </>
             )
         }

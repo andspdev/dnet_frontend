@@ -4,9 +4,10 @@ import axios from "axios";
 import { Context } from "../includes/GlobalState";
 import { formatUang, getCookie } from "../includes/Functions";
 
-import { Header } from "../includes/Header";
+import Header from "../includes/Header";
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import ItemTerakhir from "../includes/ItemTerakhir";
+import Footer from "../includes/Footer";
 
 
 
@@ -109,13 +110,7 @@ const DetailPaket = () =>
                         </div>
                     </div>
 
-                    
-                    {stateGlobal.terakhir_pilih_item !== '' ? (
-                        <>
-                            <div style={{paddingBottom: '7em'}}></div>
-                            <ItemTerakhir />
-                        </>
-                    ) : ''}
+                    <Footer/>
                 </>
             )}
         </>

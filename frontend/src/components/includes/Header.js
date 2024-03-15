@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { getCookie } from '../includes/Functions'
 import LogoPaketanly from '../../assets/images/logo-paketanly.png'
 
-export const Header = () =>
+const Header = () =>
 {
     const getUser = getCookie('user_login')
 
@@ -59,3 +59,5 @@ export const Header = () =>
         </>
     )
 }
+
+export default Header

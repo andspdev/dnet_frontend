@@ -4,10 +4,11 @@ import ImageLoader from '../../assets/images/loader.svg'
 import axios from "axios"
 import { Context } from "../includes/GlobalState"
 import { getCookie, getCurrentDateTime } from "../includes/Functions"
-import { Header } from '../includes/Header'
+import Header from "../includes/Header";
 import { Link } from "react-router-dom"
 
 import * as bootstrap from 'bootstrap'
+import Footer from "../includes/Footer"
 
 
 
@@ -230,6 +231,8 @@ const LihatTransaksi = () =>
                             }
                         </div>
                     </div>
+
+                    <Footer/>
                 </>
             )
         }
