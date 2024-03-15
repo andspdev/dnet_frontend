@@ -1,3 +1,6 @@
+import NProgress from 'nprogress'
+import "nprogress/nprogress.css";
+
 export const setCookie = (name, value, daysToExpire, path, domain, secure) => {
 	let cookieString = name + "=" + encodeURIComponent(value);
 
@@ -121,4 +124,14 @@ export const isValidPhoneNumber = (phoneNumber) => {
 
 export const isMobileDevice = () => {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+export const NProgressLoader = () =>
+{
+	NProgress.start()
+
+	setTimeout(function() 
+	{
+		NProgress.done()
+	}, 200);
 }

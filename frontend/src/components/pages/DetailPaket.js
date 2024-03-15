@@ -6,7 +6,6 @@ import { formatUang, getCookie } from "../includes/Functions";
 
 import Header from "../includes/Header";
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
-import ItemTerakhir from "../includes/ItemTerakhir";
 import Footer from "../includes/Footer";
 
 
