@@ -1,22 +1,5 @@
 {
-  "pengguna": [
-    {
-      "id": "1",
-      "nama": "Pengguna 1",
-      "email": "pengguna1@email.com",
-      "password": "12345678",
-      "thumbnail": "",
-      "bergabung_pada": "13 Maret 2024 08:43"
-    },
-    {
-      "id": "2",
-      "nama": "Pengguna 2",
-      "email": "pengguna2@email.com",
-      "password": "12345678",
-      "thumbnail": "",
-      "bergabung_pada": "10 Maret 2024 12:30"
-    }
-  ],
+  "pengguna": [],
   "paket_data": [
     {
       "id": "9d1f",
@@ -103,30 +86,5 @@
       "kategori_kartu": "telkomsel"
     }
   ],
-  "transaksi_user": [
-    {
-      "id": "b68e",
-      "paket_id": "f9be",
-      "pengguna_id": "1",
-      "created_at": "2024-03-14 00:23:59",
-      "status": "PENDING",
-      "transaksi_id": 1710350639662
-    },
-    {
-      "id": "5ea9",
-      "paket_id": "d6dc",
-      "pengguna_id": "1",
-      "created_at": "2024-03-14 00:46:26",
-      "status": "PENDING",
-      "transaksi_id": 1710351986911
-    },
-    {
-      "id": "6128",
-      "paket_id": "492d",
-      "pengguna_id": "1",
-      "created_at": "2024-03-14 01:16:09",
-      "status": "PAID",
-      "transaksi_id": 1710353769620
-    }
-  ]
+  "transaksi_user": []
 }
