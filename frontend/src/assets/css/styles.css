@@ -55,6 +55,7 @@ a {
     max-width: 480px;
     width: calc(100% - 30px);
     margin: 6em auto;
+    margin-bottom: 2em;
     box-shadow: 0 0 8px #eee;
 }
 
