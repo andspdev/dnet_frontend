@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from './GlobalState'
 import ItemTerakhir from './ItemTerakhir'
@@ -7,7 +7,8 @@ import { NProgressLoader, isMobileDevice } from './Functions'
 const Footer = () =>
 {
     const [ stateGlobal ] = useContext(Context)
-    NProgressLoader()
+
+    useEffect(() => NProgressLoader(), [])
 
     return(
         <>
